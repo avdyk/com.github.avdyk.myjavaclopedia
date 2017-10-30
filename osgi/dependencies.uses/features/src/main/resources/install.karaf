@@ -1,0 +1,4 @@
+features:addurl mvn:${project.groupId}/${project.artifactId}/${project.version}/xml/features
+features:install uses-core
+features:install uses-shell
+

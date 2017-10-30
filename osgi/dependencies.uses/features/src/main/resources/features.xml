@@ -1,0 +1,21 @@
+<features
+    xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+    name="uses">
+
+    <feature name="uses-api" version="${api.version}">
+        <!-- install joda-time 1.6 -->
+        <bundle>mvn:${project.groupId}/api/${api.version}</bundle>
+    </feature>
+
+    <feature name="uses-core" version="${core.version}">
+        <feature version="${api.version}">api</feature>
+        <!-- install joda-time 2.9 -->
+        <bundle>mvn:${project.groupId}/core/${core.version}</bundle>
+    </feature>
+
+    <feature name="uses-shell" version="${shell.version}">
+        <feature version="${core.version}">core</feature>
+        <bundle>mvn:${project.groupId}/shell/${shell.version}</bundle>
+    </feature>
+
+</features>
